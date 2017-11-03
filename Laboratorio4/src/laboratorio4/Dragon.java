@@ -39,6 +39,7 @@ public class Dragon extends Guerrero{
         this.raza = raza;
     }
 
+    @Override
     public void Ataque(Guerrero atacado){
         atacado.setSalud(atacado.getSalud() - getPoderatk());
         atacado.setPoderatk(atacado.getPoderatk() - (atacado.getPoderatk()/4));
@@ -48,6 +49,8 @@ public class Dragon extends Guerrero{
     public String toString() {
         return "Dragon{" + "color=" + color + ", raza=" + raza + '}';
     }
+
+  
     
 
     

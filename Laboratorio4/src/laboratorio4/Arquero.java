@@ -39,6 +39,7 @@ public class Arquero extends Guerrero{
         this.materialArmadura = materialArmadura;
     }
 
+    @Override
     public void Ataque(Guerrero atacado){
         atacado.setSalud(atacado.getSalud() - (getPoderatk()));
         super.setSalud(super.getSalud() + 10);
@@ -48,6 +49,8 @@ public class Arquero extends Guerrero{
     public String toString() {
         return "Arquero{" + "materialArco=" + materialArco + ", materialArmadura=" + materialArmadura + '}';
     }
+
+   
     
     
 }

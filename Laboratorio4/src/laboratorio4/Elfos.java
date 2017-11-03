@@ -46,9 +46,8 @@ public class Elfos extends Guerrero {
     }
 
     @Override
-    public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Ataque(Guerrero atacado) {
+        atacado.setSalud(atacado.getSalud() - (getPoderatk()));
     }
 
 }
-

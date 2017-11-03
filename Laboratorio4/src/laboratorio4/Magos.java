@@ -40,6 +40,7 @@ public class Magos extends Guerrero {
         this.elemento = elemento;
     }
 
+    @Override
     public void Ataque(Guerrero atacado){
         atacado.setSalud(atacado.getSalud() - (getPoderatk() + (atacado.getPoderatk()/2)));
     }
@@ -49,9 +50,6 @@ public class Magos extends Guerrero {
         return "Magos{" + "tipomag=" + tipomag + ", elemento=" + elemento + '}';
     }
 
-    @Override
-    public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
 }

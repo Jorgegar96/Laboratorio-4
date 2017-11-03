@@ -89,6 +89,6 @@ public abstract class Guerrero {
         return "Guerrero{" + "nombre=" + nombre + ", edad=" + edad + ", lugarn=" + lugarn + ", poderatk=" + poderatk + ", salud=" + salud + ", costo=" + costo + '}';
     }
 
-    public abstract void ataque();
+    public abstract void Ataque(Guerrero atacado);
 
 }
