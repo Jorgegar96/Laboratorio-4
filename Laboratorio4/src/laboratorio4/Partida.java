@@ -5,10 +5,15 @@
  */
 package laboratorio4;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author JorgeLuis
  */
 public class Partida {
-    ArrayList<Movimientos> 
+    ArrayList<Movimiento> movimientos = new ArrayList();
+    
+   private String jugador1;
+   private String jugador2;
 }

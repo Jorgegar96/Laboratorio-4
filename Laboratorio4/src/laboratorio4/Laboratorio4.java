@@ -207,35 +207,22 @@ public class Laboratorio4 {
         }
     }
 
-<<<<<<< HEAD
-    public static void registrarJugador(Jugador jugador) {
+public static void registrarJugador(Jugador jugador){
         jugador.setNombre(JOptionPane.showInputDialog(""
                 + "Nombre:"
         ));
         boolean repetir = false;
-        do {
-            try {
+        do{
+            try{
                 float dinero = Float.parseFloat(JOptionPane.showInputDialog(""
                         + "Ingrese el Dinero disponible:"
                 ));
                 jugador.setDinero(dinero);
                 repetir = false;
-            } catch (Exception e) {
+            }catch (Exception e){
                 System.out.println("No se ingreso un numero flotante");
                 repetir = true;
             }
-
-        } while (repetir);
-        elegirGuerrero();
-        jugador.setGuerrero(e);
-        jugadores.add(jugador);
-    }
-
-    public static void elegirGuerrero() {
-        String lista = "Guerreros\n\n";
-        System.out.println();
-
-
         }while (repetir);
         elegirGuerrero(jugador);
         jugadores.add(jugador);
@@ -265,17 +252,15 @@ public class Laboratorio4 {
             
             
         }
->>>>>>> 243c0bb470c3723a8a444ac38edd003da451bd77
     }
-
-    public static void listarJugadores() {
+    
+    public static void listarJugadores(){
         String lista = "Jugadores \n\n";
         for (Jugador jugador : jugadores) {
             lista += jugador + "\n\n";
         }
         System.out.println(lista);
     }
-
-=======
->>>>>>> e239e3e1b8aa972fd38bca75214068f43094e956
+    
+   
 }
