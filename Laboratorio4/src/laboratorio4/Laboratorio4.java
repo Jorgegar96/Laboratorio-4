@@ -22,11 +22,10 @@ public class Laboratorio4 {
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
     static ArrayList<Partida> partidas = new ArrayList();
-<<<<<<< HEAD
+
     static Movimiento mov = new Movimiento();
-=======
+
     static int partidaCrear = 0;
->>>>>>> 856c8a1fd7ea22a4ec6b4d92cef5ce6d9e458a3d
 
     public static void main(String[] args) {
         String opcion = "";
@@ -55,7 +54,11 @@ public class Laboratorio4 {
                     break;
 
                 case "3":
-                    registrarJugador(new Jugador());
+                    if (inventario.size() > 0) {
+                        registrarJugador(new Jugador());
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No hay Guerreros en inventario");
+                    }
                     break;
                 case "5":
                     listarJugadores();
@@ -72,22 +75,43 @@ public class Laboratorio4 {
                     partidas.get(pos).juego();
                     break;
                 case "4":
-                    String opcion2 = "";
-                    while (!opcion2.equals((jugadores.size()+1) + "")){
+                    if (jugadores.size() > 1) {
+                        String opcion2 = "";
+                        int pos1 = 0, pos2 = 0;
+
                         listarJugadores();
-                        String player1 = JOptionPane.showInputDialog("Eliga el Jugador:");
-                        String player2 = JOptionPane.showInputDialog("Eligae el Jugador:");
-                        int pos1 = Integer.parseInt(player1) - 1;
-                        int pos2 = Integer.parseInt(player2) - 1;
+                        boolean val = true;
+                        while (val) {
+                            try {
+                                String player1 = JOptionPane.showInputDialog("Elija el Jugador:");
+                                pos1 = Integer.parseInt(player1) - 1;
+                                val = false;
+                            } catch (NumberFormatException e) {
+                                JOptionPane.showMessageDialog(null, "Formato incorrecto");
+                                val = true;
+                            }
+                        }
+                        val = true;
+                        while (val) {
+                            try {
+                                String player2 = JOptionPane.showInputDialog("Elije el Jugador:");
+                                pos2 = Integer.parseInt(player2) - 1;
+                                val = false;
+                            } catch (NumberFormatException e) {
+                                JOptionPane.showMessageDialog(null, "Formato incorrecto");
+                                val = true;
+                            }
+                        }
                         partidas.add(new Partida(jugadores.get(pos1), jugadores.get(pos2)));
                         partidas.get(partidaCrear).juego();
                         partidaCrear++;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No hay suficientes jugadores para iniciar partida");
                     }
                     break;
             }
         }
     }
-    
 
     public static void crearGuerrero() {
         String opcion = "";
@@ -268,9 +292,14 @@ public class Laboratorio4 {
                 opcion = JOptionPane.showInputDialog("Posicion del guerrero");
                 int pos = Integer.parseInt(opcion);
                 try {
-                    jugador.setGuerrero(inventario.get(pos - 1));
-                    inventario.remove(pos - 1);
-                    existe = true;
+                    if (jugador.getDinero() >= inventario.get(pos - 1).getCosto()) {
+                        jugador.setGuerrero(inventario.get(pos - 1));
+                        inventario.remove(pos - 1);
+                        existe = true;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No tiene suficiente dinero para pagar ese guerrero");
+                        existe = false;
+                    }
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("El guerrero no existe");
                     existe = false;
