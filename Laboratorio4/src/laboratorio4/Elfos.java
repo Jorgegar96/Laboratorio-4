@@ -9,6 +9,9 @@ package laboratorio4;
  *
  * @author edujg
  */
-public class Elfos {
+public class Elfos extends Guerrero {
+
+    private String tipoarma;
+    private String rango;
     
 }
