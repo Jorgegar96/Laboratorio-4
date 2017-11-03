@@ -21,17 +21,19 @@ public class Laboratorio4 {
     static Arquero a = new Arquero();
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
+    static ArrayList<Partida> partidas = new ArrayList();
 
     public static void main(String[] args) {
         String opcion = "";
-        while (!opcion.equals("7")) {
+        while (!opcion.equals("8")) {
             opcion = JOptionPane.showInputDialog("1: Crear Guerreos\n"
                     + "2: Eliminar Guerreros\n"
                     + "3: Registro de Jugadores\n"
                     + "4: Iniciar Partida\n"
                     + "5: Listar Jugadores\n"
                     + "6: Listar Guerreros\n"
-                    + "7: Salir"
+                    + "7: Cargar partida\n"
+                    + "8: Salir"
             );
             switch (opcion) {
                 case "1":
@@ -54,7 +56,13 @@ public class Laboratorio4 {
                     listarJugadores();
 
                     break;
-
+                case "7":
+                    listarpart();
+                    pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la partida que quiere cargar"));
+                    listamov(pos);
+                    int posa = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el movimiento de la partida al cual quiere regresar"));
+                    
+                    break;
             }
         }
     }
@@ -207,33 +215,33 @@ public class Laboratorio4 {
         }
     }
 
-public static void registrarJugador(Jugador jugador){
+    public static void registrarJugador(Jugador jugador) {
         jugador.setNombre(JOptionPane.showInputDialog(""
                 + "Nombre:"
         ));
         boolean repetir = false;
-        do{
-            try{
+        do {
+            try {
                 float dinero = Float.parseFloat(JOptionPane.showInputDialog(""
                         + "Ingrese el Dinero disponible:"
                 ));
                 jugador.setDinero(dinero);
                 repetir = false;
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("No se ingreso un numero flotante");
                 repetir = true;
             }
-        }while (repetir);
+        } while (repetir);
         elegirGuerrero(jugador);
         jugadores.add(jugador);
     }
-    
-    public static void elegirGuerrero(Jugador jugador){
+
+    public static void elegirGuerrero(Jugador jugador) {
         String lista = "Guerreros\n\n";
         Listar(inventario);
         String opcion = "";
         boolean existe = false;
-        while (!existe){
+        while (!existe) {
             try {
                 opcion = JOptionPane.showInputDialog("Posicion del guerrero");
                 int pos = Integer.parseInt(opcion);
@@ -249,18 +257,29 @@ public static void registrarJugador(Jugador jugador){
                 System.out.println("Formato de numero incorrecto");
                 existe = false;
             }
-            
-            
+
         }
     }
-    
-    public static void listarJugadores(){
+
+    public static void listarJugadores() {
         String lista = "Jugadores \n\n";
         for (Jugador jugador : jugadores) {
             lista += jugador + "\n\n";
         }
         System.out.println(lista);
     }
-    
-   
+
+    public static void listarpart() {
+        for (int i = 0; i < partidas.size(); i++) {
+            JOptionPane.showMessageDialog(null, "Lista de partidas:\n"
+                    + i + " " + partidas.get(i).toString() + "\n");
+        }
+    }
+
+    public static void listamov(int pos) {
+        for (int i = 0; i < partidas.get(pos).movimientos.size(); i++) {
+            JOptionPane.showInputDialog("Lista de movimientos de la partida:\n"
+                    + partidas.get(pos).movimientos.get(i) + "\n");
+        }
+    }
 }
