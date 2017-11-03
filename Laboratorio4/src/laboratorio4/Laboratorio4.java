@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Laboratorio4 {
 
     static ArrayList<Jugador> jugadores = new ArrayList();
-    static ArrayList<Guerreros> inventario = new ArrayList();
+    static ArrayList<Guerrero> inventario = new ArrayList();
     /**
      * @param args the command line arguments
      */
