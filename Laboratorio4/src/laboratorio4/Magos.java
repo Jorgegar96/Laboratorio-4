@@ -40,18 +40,14 @@ public class Magos extends Guerrero {
         this.elemento = elemento;
     }
 
-    public void Ataque(Guerrero atacado){
-        atacado.setSalud(atacado.getSalud() - (getPoderatk() + (atacado.getPoderatk()/2)));
-    }
-    
     @Override
-    public String toString() {
-        return "Magos{" + "tipomag=" + tipomag + ", elemento=" + elemento + '}';
+    public void Ataque(Guerrero atacado) {
+        atacado.setSalud(atacado.getSalud() - (getPoderatk() + (atacado.getPoderatk() / 2)));
     }
 
     @Override
-    public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String toString() {
+        return super.toString() + "Mago{" + "Tipo de magia = " + tipomag + "\nElemento favorito = " + elemento + "}}";
     }
 
 }

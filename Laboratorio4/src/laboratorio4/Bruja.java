@@ -9,8 +9,8 @@ package laboratorio4;
  *
  * @author JorgeLuis
  */
-public class Bruja extends Guerrero{
-    
+public class Bruja extends Guerrero {
+
     private String sigloNacimiento;
     private String lugarResidencia;
 
@@ -39,15 +39,15 @@ public class Bruja extends Guerrero{
         this.lugarResidencia = lugarResidencia;
     }
 
-    public void Ataque(Guerrero atacado){
+    @Override
+    public void Ataque(Guerrero atacado) {
         atacado.setSalud(atacado.getSalud() - (atacado.getPoderatk()));
         atacado.setPoderatk(atacado.getPoderatk() + 50);
     }
 
     @Override
     public String toString() {
-        return "Bruja{" + "sigloNacimiento=" + sigloNacimiento + ", lugarResidencia=" + lugarResidencia + '}';
+        return super.toString() + "Bruja{" + "Siglo de Nacimiento = " + sigloNacimiento + "\nLugar de Residencia = " + lugarResidencia + "}}";
     }
-    
-    
+
 }

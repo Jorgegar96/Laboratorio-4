@@ -9,7 +9,8 @@ package laboratorio4;
  *
  * @author JorgeLuis
  */
-public class Dragon extends Guerrero{
+public class Dragon extends Guerrero {
+
     private String color;
     private String raza;
 
@@ -39,16 +40,15 @@ public class Dragon extends Guerrero{
         this.raza = raza;
     }
 
-    public void Ataque(Guerrero atacado){
+    @Override
+    public void Ataque(Guerrero atacado) {
         atacado.setSalud(atacado.getSalud() - getPoderatk());
-        atacado.setPoderatk(atacado.getPoderatk() - (atacado.getPoderatk()/4));
+        atacado.setPoderatk(atacado.getPoderatk() - (atacado.getPoderatk() / 4));
     }
-    
+
     @Override
     public String toString() {
-        return "Dragon{" + "color=" + color + ", raza=" + raza + '}';
+        return super.toString() + "Dragon{" + "Color=" + color + "\nRaza=" + raza + "}}";
     }
-    
 
-    
 }

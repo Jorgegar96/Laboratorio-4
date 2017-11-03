@@ -42,13 +42,12 @@ public class Elfos extends Guerrero {
 
     @Override
     public String toString() {
-        return "Elfos{" + "tipoarma=" + tipoarma + ", rango=" + rango + '}';
+        return super.toString() + "Elfos{" + "Tipo de arma = " + tipoarma + "\nRango = " + rango + "}}";
     }
 
     @Override
-    public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Ataque(Guerrero atacado) {
+        atacado.setSalud(atacado.getSalud() - (getPoderatk()));
     }
 
 }
-
