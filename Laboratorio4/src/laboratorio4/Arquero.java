@@ -9,8 +9,8 @@ package laboratorio4;
  *
  * @author JorgeLuis
  */
-public class Arquero extends Guerrero{
-    
+public class Arquero extends Guerrero {
+
     private String materialArco;
     private String materialArmadura;
 
@@ -40,17 +40,14 @@ public class Arquero extends Guerrero{
     }
 
     @Override
-    public void Ataque(Guerrero atacado){
+    public void Ataque(Guerrero atacado) {
         atacado.setSalud(atacado.getSalud() - (getPoderatk()));
         super.setSalud(super.getSalud() + 10);
     }
-    
+
     @Override
     public String toString() {
-        return "Arquero{" + "materialArco=" + materialArco + ", materialArmadura=" + materialArmadura + '}';
+        return super.toString() + "Arquero{" + "Material del Arco = " + materialArco + "\nMaterial de la Armadura = " + materialArmadura + "}}";
     }
 
-   
-    
-    
 }

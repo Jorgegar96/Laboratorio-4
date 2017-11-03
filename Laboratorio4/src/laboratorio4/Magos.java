@@ -41,15 +41,13 @@ public class Magos extends Guerrero {
     }
 
     @Override
-    public void Ataque(Guerrero atacado){
-        atacado.setSalud(atacado.getSalud() - (getPoderatk() + (atacado.getPoderatk()/2)));
+    public void Ataque(Guerrero atacado) {
+        atacado.setSalud(atacado.getSalud() - (getPoderatk() + (atacado.getPoderatk() / 2)));
     }
-    
+
     @Override
     public String toString() {
-        return "Magos{" + "tipomag=" + tipomag + ", elemento=" + elemento + '}';
+        return super.toString() + "Mago{" + "Tipo de magia = " + tipomag + "\nElemento favorito = " + elemento + "}}";
     }
-
-
 
 }

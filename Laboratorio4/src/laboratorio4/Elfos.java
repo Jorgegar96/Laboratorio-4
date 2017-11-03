@@ -42,7 +42,7 @@ public class Elfos extends Guerrero {
 
     @Override
     public String toString() {
-        return "Elfos{" + "tipoarma=" + tipoarma + ", rango=" + rango + '}';
+        return super.toString() + "Elfos{" + "Tipo de arma = " + tipoarma + "\nRango = " + rango + "}}";
     }
 
     @Override

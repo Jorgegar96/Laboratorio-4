@@ -47,7 +47,7 @@ public class Bruja extends Guerrero {
 
     @Override
     public String toString() {
-        return "Bruja{" + "sigloNacimiento=" + sigloNacimiento + ", lugarResidencia=" + lugarResidencia + '}';
+        return super.toString() + "Bruja{" + "Siglo de Nacimiento = " + sigloNacimiento + "\nLugar de Residencia = " + lugarResidencia + "}}";
     }
 
 }

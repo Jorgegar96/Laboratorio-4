@@ -86,7 +86,7 @@ public abstract class Guerrero {
 
     @Override
     public String toString() {
-        return "Guerrero{" + "nombre=" + nombre + ", edad=" + edad + ", lugarn=" + lugarn + ", poderatk=" + poderatk + ", salud=" + salud + ", costo=" + costo + '}';
+        return "Guerrero{{" + "Nombre = " + nombre + "\nEdad = " + edad + "\nLugar de nacimiento = " + lugarn + "\nPoder de Ataque = " + poderatk + "\nSalud = " + salud + "\nCosto = " + costo + "\n";
     }
 
     public abstract void Ataque(Guerrero atacado);
