@@ -42,7 +42,7 @@ public class Magos extends Guerrero {
 
     @Override
     public void Ataque(Guerrero atacado) {
-        atacado.setSalud(atacado.getSalud() - (getPoderatk() + (atacado.getPoderatk() / 2)));
+        atacado.setSalud(atacado.getSalud() - (super.getPoderatk() + (atacado.getPoderatk() / 2)));
     }
 
     @Override

@@ -22,6 +22,7 @@ public class Laboratorio4 {
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
     static ArrayList<Partida> partidas = new ArrayList();
+    static int partidaCrear = 0;
 
     public static void main(String[] args) {
         String opcion = "";
@@ -63,9 +64,23 @@ public class Laboratorio4 {
                     int posa = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el movimiento de la partida al cual quiere regresar"));
                     
                     break;
+                case "4":
+                    String opcion2 = "";
+                    while (!opcion2.equals((jugadores.size()+1) + "")){
+                        listarJugadores();
+                        String player1 = JOptionPane.showInputDialog("Eliga el Jugador:");
+                        String player2 = JOptionPane.showInputDialog("Eligae el Jugador:");
+                        int pos1 = Integer.parseInt(player1) - 1;
+                        int pos2 = Integer.parseInt(player2) - 1;
+                        partidas.add(new Partida(jugadores.get(pos1), jugadores.get(pos2)));
+                        partidas.get(partidaCrear).juego();
+                        partidaCrear++;
+                    }
+                    break;
             }
         }
     }
+    
 
     public static void crearGuerrero() {
         String opcion = "";

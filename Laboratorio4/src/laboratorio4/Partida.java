@@ -23,6 +23,13 @@ public class Partida {
     public Partida() {
     }
 
+    public Partida(Jugador jugador1, Jugador jugador2) {
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
+        enJuego = true;
+        turno = true;
+    }
+
     public ArrayList<Movimiento> getMovimientos() {
         return movimientos;
     }
@@ -89,6 +96,11 @@ public class Partida {
                 JOptionPane.showMessageDialog(null, "Jugador 1 has ganado!"
                         + "\n" + "Salud de Jugador 1 : " + enTurno.getGuerrero().getSalud()
                         + "\n" + "Salud de Jugador 2 : " + not.getGuerrero().getSalud());
+            }
+            if (turno == true){
+                turno = false;
+            }else{
+                turno = true;
             }
         }
     }
