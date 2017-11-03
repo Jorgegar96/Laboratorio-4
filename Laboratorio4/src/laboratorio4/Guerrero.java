@@ -9,7 +9,7 @@ package laboratorio4;
  *
  * @author edujg
  */
-public class Guerrero {
+public abstract class Guerrero {
 
     private String nombre;
     private int edad;
@@ -88,5 +88,7 @@ public class Guerrero {
     public String toString() {
         return "Guerrero{" + "nombre=" + nombre + ", edad=" + edad + ", lugarn=" + lugarn + ", poderatk=" + poderatk + ", salud=" + salud + ", costo=" + costo + '}';
     }
+
+    public abstract void ataque();
 
 }
