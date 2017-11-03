@@ -59,9 +59,7 @@ public abstract class Guerrero {
     }
 
     public void setPoderatk(int poderatk) {
-        if (poderatk < 51) {
             this.poderatk = poderatk;
-        }
     }
 
     public int getSalud() {
@@ -69,8 +67,10 @@ public abstract class Guerrero {
     }
 
     public void setSalud(int salud) {
-        if (salud < 201 && salud > 99) {
+        if (salud < 201) {
             this.salud = salud;
+        }else if (salud < 0){
+            this.salud = 0;
         }
     }
 

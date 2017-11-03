@@ -23,6 +23,13 @@ public class Partida {
     public Partida() {
     }
 
+    public Partida(Jugador jugador1, Jugador jugador2) {
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
+        enJuego = true;
+        turno = true;
+    }
+
     public ArrayList<Movimiento> getMovimientos() {
         return movimientos;
     }
@@ -63,7 +70,7 @@ public class Partida {
         Jugador not;
         String turn;
         String notTurn;
-        while (enJuego = true){
+        while (enJuego){
             if (turno){
                 enTurno = jugador1;
                 not = jugador2;
@@ -80,6 +87,21 @@ public class Partida {
                     + "\n" + "Salud de Enemigo : " + not.getGuerrero().getSalud()
             );
             enTurno.getGuerrero().Ataque(not.getGuerrero());
+            if (jugador1.getGuerrero().getSalud() == 0){
+                enJuego = false;
+                JOptionPane.showMessageDialog(null, "Jugador 2 has ganado!"
+                        + "\n" + "Salud de Jugador 2: " + enTurno.getGuerrero().getSalud()
+                        + "\n" + "Salud de Jugador 1 : " + not.getGuerrero().getSalud());
+            }else if (jugador2.getGuerrero().getSalud() == 0){
+                JOptionPane.showMessageDialog(null, "Jugador 1 has ganado!"
+                        + "\n" + "Salud de Jugador 1 : " + enTurno.getGuerrero().getSalud()
+                        + "\n" + "Salud de Jugador 2 : " + not.getGuerrero().getSalud());
+            }
+            if (turno == true){
+                turno = false;
+            }else{
+                turno = true;
+            }
         }
     }
    
