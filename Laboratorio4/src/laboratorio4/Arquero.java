@@ -47,7 +47,7 @@ public class Arquero extends Guerrero {
 
     @Override
     public String toString() {
-        return super.toString() + "Arquero{" + "Material del Arco = " + materialArco + "\nMaterial de la Armadura = " + materialArmadura + "}}";
+        return super.toString() + "Arquero{" + "Material del Arco = " + materialArco + "\nMaterial de la Armadura = " + materialArmadura + "}}\n\n";
     }
 
 }

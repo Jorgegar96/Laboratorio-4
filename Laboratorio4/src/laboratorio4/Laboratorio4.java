@@ -42,16 +42,16 @@ public class Laboratorio4 {
                     int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del guerreo a eliminar"));
                     inventario.remove(pos);
                     break;
-<<<<<<< HEAD
                 case "6":
                     Listar(inventario);
-=======
+                    break;
                 case "3":
                     registrarJugador(new Jugador());
                     break;
                 case "5":
                     listarJugadores();
->>>>>>> 530329aff885cd307a6ce90762354af32b4b7252
+                    break;
+
             }
         }
     }
@@ -87,12 +87,46 @@ public class Laboratorio4 {
     }
 
     public static void crearg(Guerrero g) {
+        boolean rep = true;
         g.setNombre(JOptionPane.showInputDialog("Ingrese el nombre del guerrero: "));
-        g.setSalud(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la salud del guerrero")));
-        g.setCosto(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el costo del guerrero")));
+        while (rep) {
+            try {
+                int salud = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la salud del guerrero"));
+                conds(salud);
+                g.setSalud(salud);
+                rep = false;
+            } catch (myException e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+                rep = true;
+            }
+        }
+        rep = true;
+        while (rep) {
+            try {
+                int costo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el costo del guerrero"));
+                condc(costo);
+                g.setCosto(costo);
+                rep = false;
+            } catch (myException e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+                rep = true;
+            }
+        }
+
         g.setEdad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del guerrero")));
         g.setLugarn(JOptionPane.showInputDialog("Ingrese el lugar de nacimiento del guerrero"));
-        g.setPoderatk(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el poder de ataque del guerrero")));
+        boolean repetir = true;
+        while (repetir) {
+            try {
+                int poder = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el poder de ataque del guerrero"));
+                condp(poder);
+                g.setPoderatk(poder);
+                repetir = false;
+            } catch (myException e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+                repetir = true;
+            }
+        }
         if (g instanceof Magos) {
             crearm(g);
         } else if (g instanceof Elfos) {
@@ -148,232 +182,60 @@ public class Laboratorio4 {
         }
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public static void registrarJugador(Jugador jugador){
+    public static void condp(int poder) throws myException {
+        if (poder <= 50 && poder > 0) {
+        } else {
+            throw new myException("El poder debe estar entre 0 y 50");
+        }
+    }
+
+    public static void conds(int salud) throws myException {
+        if (salud <= 200 && salud >= 100) {
+        } else {
+            throw new myException("La salud tiene que estar entre 100 y 200");
+        }
+    }
+
+    public static void condc(int costo) throws myException {
+        if (costo <= 300 && costo > 0) {
+        } else {
+            throw new myException("El costo del guerrero debe estar entre 0 y 300");
+        }
+    }
+
+    public static void registrarJugador(Jugador jugador) {
         jugador.setNombre(JOptionPane.showInputDialog(""
                 + "Nombre:"
         ));
         boolean repetir = false;
-        do{
-            try{
+        do {
+            try {
                 float dinero = Float.parseFloat(JOptionPane.showInputDialog(""
                         + "Ingrese el Dinero disponible:"
                 ));
                 repetir = false;
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("No se ingreso un numero flotante");
                 repetir = true;
             }
-        }while (repetir);
+        } while (repetir);
         elegirGuerrero();
         jugador.setGuerrero(e);
         jugadores.add(jugador);
     }
-    
-    public static void elegirGuerrero(){
+
+    public static void elegirGuerrero() {
         String lista = "Guerreros\n\n";
         System.out.println();
-        
+
     }
-    
-    public static void listarJugadores(){
+
+    public static void listarJugadores() {
         String lista = "Jugadores \n\n";
         for (Jugador jugador : jugadores) {
             lista += jugador + "\n";
         }
         System.out.println(lista);
     }
-    
-    public static void evaluarFloat(float valor) throws myException{
-        for (int i = 0; i < ; i++) {
-            
-        }
-    } 
+
 }

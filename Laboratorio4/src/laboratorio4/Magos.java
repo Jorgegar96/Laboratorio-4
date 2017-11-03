@@ -47,7 +47,7 @@ public class Magos extends Guerrero {
 
     @Override
     public String toString() {
-        return super.toString() + "Mago{" + "Tipo de magia = " + tipomag + "\nElemento favorito = " + elemento + "}}";
+        return super.toString() + "Mago{" + "Tipo de magia = " + tipomag + "\nElemento favorito = " + elemento + "}}\n\n";
     }
 
 }

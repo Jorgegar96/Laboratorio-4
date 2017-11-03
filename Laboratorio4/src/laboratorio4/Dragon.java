@@ -48,7 +48,7 @@ public class Dragon extends Guerrero {
 
     @Override
     public String toString() {
-        return super.toString() + "Dragon{" + "Color=" + color + "\nRaza=" + raza + "}}";
+        return super.toString() + "Dragon{" + "Color=" + color + "\nRaza=" + raza + "}}\n\n";
     }
 
 }
