@@ -44,20 +44,17 @@ public class Laboratorio4 {
                     break;
                 case "6":
                     Listar(inventario);
-<<<<<<< HEAD
+
                     break;
-=======
->>>>>>> 243c0bb470c3723a8a444ac38edd003da451bd77
+
                 case "3":
                     registrarJugador(new Jugador());
                     break;
                 case "5":
                     listarJugadores();
-<<<<<<< HEAD
+
                     break;
 
-=======
->>>>>>> 243c0bb470c3723a8a444ac38edd003da451bd77
             }
         }
     }
@@ -174,7 +171,7 @@ public class Laboratorio4 {
 
     public static void Listar(ArrayList<Guerrero> inventario) {
         for (int i = 0; i < inventario.size(); i++) {
-            System.out.print( (i + 1) + ") ");
+            System.out.print((i + 1) + ") ");
             if (inventario.get(i) instanceof Magos) {
                 System.out.println(((Magos) (inventario.get(i))).toString());
             } else if (inventario.get(i) instanceof Elfos) {
@@ -208,74 +205,6 @@ public class Laboratorio4 {
         } else {
             throw new myException("El costo del guerrero debe estar entre 0 y 300");
         }
-    }
-
-    public static void registrarJugador(Jugador jugador) {
-        jugador.setNombre(JOptionPane.showInputDialog(""
-                + "Nombre:"
-        ));
-        boolean repetir = false;
-        do {
-            try {
-                float dinero = Float.parseFloat(JOptionPane.showInputDialog(""
-                        + "Ingrese el Dinero disponible:"
-                ));
-                jugador.setDinero(dinero);
-                repetir = false;
-            } catch (Exception e) {
-                System.out.println("No se ingreso un numero flotante");
-                repetir = true;
-            }
-<<<<<<< HEAD
-        } while (repetir);
-        elegirGuerrero();
-        jugador.setGuerrero(e);
-        jugadores.add(jugador);
-    }
-
-    public static void elegirGuerrero() {
-        String lista = "Guerreros\n\n";
-        System.out.println();
-
-=======
-        }while (repetir);
-        elegirGuerrero(jugador);
-        jugadores.add(jugador);
-    }
-    
-    public static void elegirGuerrero(Jugador jugador){
-        String lista = "Guerreros\n\n";
-        Listar(inventario);
-        String opcion = "";
-        boolean existe = false;
-        while (!existe){
-            try {
-                opcion = JOptionPane.showInputDialog("Posicion del guerrero");
-                int pos = Integer.parseInt(opcion);
-                try {
-                    jugador.setGuerrero(inventario.get(pos - 1));
-                    inventario.remove(pos - 1);
-                    existe = true;
-                } catch (IndexOutOfBoundsException e) {
-                    System.out.println("El guerrero no existe");
-                    existe = false;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Formato de numero incorrecto");
-                existe = false;
-            }
-            
-            
-        }
->>>>>>> 243c0bb470c3723a8a444ac38edd003da451bd77
-    }
-
-    public static void listarJugadores() {
-        String lista = "Jugadores \n\n";
-        for (Jugador jugador : jugadores) {
-            lista += jugador + "\n\n";
-        }
-        System.out.println(lista);
     }
 
 }
