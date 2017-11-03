@@ -22,7 +22,11 @@ public class Laboratorio4 {
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
     static ArrayList<Partida> partidas = new ArrayList();
+<<<<<<< HEAD
+    static Movimiento mov = new Movimiento();
+=======
     static int partidaCrear = 0;
+>>>>>>> 856c8a1fd7ea22a4ec6b4d92cef5ce6d9e458a3d
 
     public static void main(String[] args) {
         String opcion = "";
@@ -62,7 +66,10 @@ public class Laboratorio4 {
                     pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la partida que quiere cargar"));
                     listamov(pos);
                     int posa = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el movimiento de la partida al cual quiere regresar"));
-                    
+                    mov.setJugador1(partidas.get(pos).movimientos.get(posa).getJugador1());
+                    mov.setJugador2(partidas.get(pos).movimientos.get(posa).getJugador2());
+                    mov.setTurno(partidas.get(pos).movimientos.get(posa).isTurno());
+                    partidas.get(pos).juego();
                     break;
                 case "4":
                     String opcion2 = "";
@@ -294,7 +301,7 @@ public class Laboratorio4 {
     public static void listamov(int pos) {
         for (int i = 0; i < partidas.get(pos).movimientos.size(); i++) {
             JOptionPane.showInputDialog("Lista de movimientos de la partida:\n"
-                    + partidas.get(pos).movimientos.get(i) + "\n");
+                    + partidas.get(pos).movimientos.get(i).toString() + "\n");
         }
     }
 }
