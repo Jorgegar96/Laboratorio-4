@@ -44,20 +44,17 @@ public class Laboratorio4 {
                     break;
                 case "6":
                     Listar(inventario);
-<<<<<<< HEAD
+
                     break;
-=======
->>>>>>> 243c0bb470c3723a8a444ac38edd003da451bd77
+
                 case "3":
                     registrarJugador(new Jugador());
                     break;
                 case "5":
                     listarJugadores();
-<<<<<<< HEAD
+
                     break;
 
-=======
->>>>>>> 243c0bb470c3723a8a444ac38edd003da451bd77
             }
         }
     }
@@ -174,7 +171,7 @@ public class Laboratorio4 {
 
     public static void Listar(ArrayList<Guerrero> inventario) {
         for (int i = 0; i < inventario.size(); i++) {
-            System.out.print( (i + 1) + ") ");
+            System.out.print((i + 1) + ") ");
             if (inventario.get(i) instanceof Magos) {
                 System.out.println(((Magos) (inventario.get(i))).toString());
             } else if (inventario.get(i) instanceof Elfos) {
@@ -210,6 +207,7 @@ public class Laboratorio4 {
         }
     }
 
+<<<<<<< HEAD
     public static void registrarJugador(Jugador jugador) {
         jugador.setNombre(JOptionPane.showInputDialog(""
                 + "Nombre:"
@@ -278,4 +276,6 @@ public class Laboratorio4 {
         System.out.println(lista);
     }
 
+=======
+>>>>>>> e239e3e1b8aa972fd38bca75214068f43094e956
 }
