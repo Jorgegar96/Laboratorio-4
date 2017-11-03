@@ -22,9 +22,13 @@ public class Laboratorio4 {
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
     static ArrayList<Partida> partidas = new ArrayList();
+<<<<<<< HEAD
 
     static Movimiento mov = new Movimiento();
 
+=======
+    static Movimiento mov = new Movimiento();
+>>>>>>> 82f989234fc366691b5c3301ae591ec74af1397d
     static int partidaCrear = 0;
 
     public static void main(String[] args) {

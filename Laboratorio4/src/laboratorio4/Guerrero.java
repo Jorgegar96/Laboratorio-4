@@ -67,9 +67,9 @@ public abstract class Guerrero {
     }
 
     public void setSalud(int salud) {
-        if (salud < 201) {
+        if (salud < 201 && salud > 0) {
             this.salud = salud;
-        }else if (salud < 0){
+        }else if (salud <= 0){
             this.salud = 0;
         }
     }
