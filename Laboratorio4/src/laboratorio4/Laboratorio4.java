@@ -42,8 +42,16 @@ public class Laboratorio4 {
                     int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del guerreo a eliminar"));
                     inventario.remove(pos);
                     break;
+<<<<<<< HEAD
                 case "6":
                     Listar(inventario);
+=======
+                case "3":
+                    registrarJugador(new Jugador());
+                    break;
+                case "5":
+                    listarJugadores();
+>>>>>>> 530329aff885cd307a6ce90762354af32b4b7252
             }
         }
     }
@@ -140,4 +148,232 @@ public class Laboratorio4 {
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static void registrarJugador(Jugador jugador){
+        jugador.setNombre(JOptionPane.showInputDialog(""
+                + "Nombre:"
+        ));
+        boolean repetir = false;
+        do{
+            try{
+                float dinero = Float.parseFloat(JOptionPane.showInputDialog(""
+                        + "Ingrese el Dinero disponible:"
+                ));
+                repetir = false;
+            }catch (Exception e){
+                System.out.println("No se ingreso un numero flotante");
+                repetir = true;
+            }
+        }while (repetir);
+        elegirGuerrero();
+        jugador.setGuerrero(e);
+        jugadores.add(jugador);
+    }
+    
+    public static void elegirGuerrero(){
+        String lista = "Guerreros\n\n";
+        System.out.println();
+        
+    }
+    
+    public static void listarJugadores(){
+        String lista = "Jugadores \n\n";
+        for (Jugador jugador : jugadores) {
+            lista += jugador + "\n";
+        }
+        System.out.println(lista);
+    }
+    
+    public static void evaluarFloat(float valor) throws myException{
+        for (int i = 0; i < ; i++) {
+            
+        }
+    } 
 }
