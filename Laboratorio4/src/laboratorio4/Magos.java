@@ -40,6 +40,10 @@ public class Magos extends Guerrero {
         this.elemento = elemento;
     }
 
+    public void Ataque(Guerrero atacado){
+        atacado.setSalud(atacado.getSalud() - (getPoderatk() + (atacado.getPoderatk()/2)));
+    }
+    
     @Override
     public String toString() {
         return "Magos{" + "tipomag=" + tipomag + ", elemento=" + elemento + '}';
