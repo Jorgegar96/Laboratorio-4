@@ -226,7 +226,7 @@ public class Laboratorio4 {
                 System.out.println("No se ingreso un numero flotante");
                 repetir = true;
             }
-<<<<<<< HEAD
+
         } while (repetir);
         elegirGuerrero();
         jugador.setGuerrero(e);
@@ -237,7 +237,7 @@ public class Laboratorio4 {
         String lista = "Guerreros\n\n";
         System.out.println();
 
-=======
+
         }while (repetir);
         elegirGuerrero(jugador);
         jugadores.add(jugador);
