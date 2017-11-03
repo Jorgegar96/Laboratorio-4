@@ -11,8 +11,8 @@ package laboratorio4;
  */
 public class Movimiento {
 
-    public Jugador jugador1;
-    public Jugador jugador2;
+    public Jugador jugador1 = new Jugador();
+    public Jugador jugador2 = new Jugador();
     public boolean turno;
 
     public Movimiento() {

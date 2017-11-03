@@ -5,11 +5,13 @@
  */
 package laboratorio4;
 
+import java.io.Serializable;
+
 /**
  *
  * @author JorgeLuis
  */
-public class Jugador {
+public class Jugador implements Serializable{
     private String nombre;
     private float dinero;
     private int puntos;

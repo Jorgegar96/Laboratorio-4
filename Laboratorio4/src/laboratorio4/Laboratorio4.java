@@ -22,11 +22,8 @@ public class Laboratorio4 {
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
     static ArrayList<Partida> partidas = new ArrayList();
-<<<<<<< HEAD
     static Movimiento mov = new Movimiento();
-=======
     static int partidaCrear = 0;
->>>>>>> 856c8a1fd7ea22a4ec6b4d92cef5ce6d9e458a3d
 
     public static void main(String[] args) {
         String opcion = "";
