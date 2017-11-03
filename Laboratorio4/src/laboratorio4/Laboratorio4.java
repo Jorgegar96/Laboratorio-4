@@ -33,6 +33,11 @@ public class Laboratorio4 {
                     crearGuerrero();
                     Listar(inventario);
                     break;
+                case "3":
+                    registrarJugador(new Jugador());
+                    break;
+                case "5":
+                    listarJugadores();
             }
         }
     }
@@ -317,10 +322,12 @@ public class Laboratorio4 {
         }while (repetir);
         elegirGuerrero();
         jugador.setGuerrero(e);
+        jugadores.add(jugador);
     }
     
     public static void elegirGuerrero(){
-        String lista = "Guerreros";
+        String lista = "Guerreros\n\n";
+        System.out.println();
         
     }
     
@@ -329,6 +336,7 @@ public class Laboratorio4 {
         for (Jugador jugador : jugadores) {
             lista += jugador + "\n";
         }
+        System.out.println(lista);
     }
     
     public static void evaluarFloat(float valor) throws myException{

@@ -63,7 +63,7 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", dinero=" + dinero + ", puntos=" + puntos + ", guerrero=" + guerrero + '}';
+        return "Nombre: " + nombre + "\nDinero: " + dinero + "\nPuntos: " + puntos + "\nGuerrero: " + guerrero.getClass().getSimpleName() ;
     }
     
     
