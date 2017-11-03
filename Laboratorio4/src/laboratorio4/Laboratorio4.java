@@ -26,13 +26,24 @@ public class Laboratorio4 {
         String opcion = "";
         while (!opcion.equals("7")) {
             opcion = JOptionPane.showInputDialog("1: Crear Guerreos\n"
-                    + "2: "
+                    + "2: Eliminar Guerreros\n"
+                    + "3: Registro de Jugadores\n"
+                    + "4: Iniciar Partida\n"
+                    + "5: Listar Jugadores\n"
+                    + "6: Listar Guerreros\n"
+                    + "7: Salir"
             );
             switch (opcion) {
                 case "1":
                     crearGuerrero();
-                    Listar(inventario);
                     break;
+                case "2":
+                    Listar(inventario);
+                    int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del guerreo a eliminar"));
+                    inventario.remove(pos);
+                    break;
+                case "6":
+                    Listar(inventario);
             }
         }
     }
@@ -40,11 +51,29 @@ public class Laboratorio4 {
     public static void crearGuerrero() {
         String opcion = "";
         while (!opcion.equals("6")) {
-            opcion = JOptionPane.showInputDialog("");
+            opcion = JOptionPane.showInputDialog("1: Mago\n"
+                    + "2: Elfo\n"
+                    + "3: Arquero\n"
+                    + "4: Dragon\n"
+                    + "5: Bruja\n"
+                    + "6: Salir");
             switch (opcion) {
                 case "1":
                     crearg(new Magos());
                     break;
+                case "2":
+                    crearg(new Elfos());
+                    break;
+                case "3":
+                    crearg(new Arquero());
+                    break;
+                case "4":
+                    crearg(new Dragon());
+                    break;
+                case "5":
+                    crearb(new Bruja());
+                    break;
+                default:
             }
         }
     }
@@ -72,7 +101,7 @@ public class Laboratorio4 {
 
     public static void crearm(Guerrero g) {
         ((Magos) (g)).setElemento(JOptionPane.showInputDialog("Ingrese el elemento favorito del mago"));
-        ((Magos) (g)).setTipomag("Ingrese el tipo de magia del mago");
+        ((Magos) (g)).setTipomag(JOptionPane.showInputDialog("Ingrese el tipo de magia"));
     }
 
     public static void creare(Guerrero g) {
