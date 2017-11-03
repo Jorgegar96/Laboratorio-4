@@ -19,6 +19,10 @@ public class Laboratorio4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< HEAD
+        // TODO code application logic here
+=======
+>>>>>>> 84a865b12812dbbdf297c04b1382499a6b5bb2ac
         
     }
     
