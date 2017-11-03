@@ -15,6 +15,20 @@ public class Jugador {
     private int puntos;
     private Guerrero guerrero;
 
+    public Jugador() {
+        setPuntos(0);
+    }
+
+    public Jugador(String nombre, float dinero, int puntos, Guerrero guerrero) {
+        this.nombre = nombre;
+        this.dinero = dinero;
+        this.puntos = puntos;
+        this.guerrero = guerrero;
+        setPuntos(0);
+    }
+    
+    
+
     public String getNombre() {
         return nombre;
     }

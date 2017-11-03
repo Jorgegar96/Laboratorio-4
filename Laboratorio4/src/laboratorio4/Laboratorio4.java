@@ -57,4 +57,229 @@ public class Laboratorio4 {
         ((Arquero)(g)).set
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static void registrarJugador(Jugador jugador){
+        jugador.setNombre(JOptionPane.showInputDialog(""
+                + "Nombre:"
+        ));
+        boolean repetir = false;
+        do{
+            try{
+                float dinero = Float.parseFloat(JOptionPane.showInputDialog(""
+                        + "Ingrese el Dinero disponible:"
+                ));
+                repetir = false;
+            }catch (Exception e){
+                System.out.println("No se ingreso un numero flotante");
+                repetir = true;
+            }
+        }while (repetir);
+        elegirGuerrero();
+        jugador.setGuerrero(e);
+    }
+    
+    public static void elegirGuerrero(){
+        String lista = "Guerreros";
+        
+    }
+    
+    public static void listarJugadores(){
+        String lista = "Jugadores \n\n";
+        for (Jugador jugador : jugadores) {
+            lista += jugador + "\n";
+        }
+    }
+    
+    public static void evaluarFloat(float valor) throws myException{
+        for (int i = 0; i < ; i++) {
+            
+        }
+    } 
 }
