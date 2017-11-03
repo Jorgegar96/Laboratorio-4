@@ -12,9 +12,43 @@ package laboratorio4;
 public class Dragon extends Guerrero{
     private String color;
     private String raza;
-    
-    public void Ataque(){
-        
+
+    public Dragon() {
+        super();
     }
+
+    public Dragon(String color, String raza, String nombre, int edad, String lugarn, int poderatk, int salud, int costo) {
+        super(nombre, edad, lugarn, poderatk, salud, costo);
+        this.color = color;
+        this.raza = raza;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    public void Ataque(Guerrero atacado){
+        atacado.setSalud(atacado.getSalud() - getPoderatk());
+        atacado.setPoderatk(atacado.getPoderatk() - (atacado.getPoderatk()/4));
+    }
+    
+    @Override
+    public String toString() {
+        return "Dragon{" + "color=" + color + ", raza=" + raza + '}';
+    }
+    
+
     
 }

@@ -21,7 +21,10 @@ public class Laboratorio4 {
     static Arquero a = new Arquero();
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
+<<<<<<< HEAD
 
+=======
+>>>>>>> b3c801eca1ce9d229ba2ae9c3a5adadd53470429
     /**
      * @param args the command line arguments
      */
