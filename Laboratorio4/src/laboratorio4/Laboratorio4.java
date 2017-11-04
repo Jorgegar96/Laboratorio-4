@@ -22,9 +22,13 @@ public class Laboratorio4 {
     static ArrayList<Jugador> jugadores = new ArrayList();
     static ArrayList<Guerrero> inventario = new ArrayList();
     static ArrayList<Partida> partidas = new ArrayList();
+<<<<<<< HEAD
 
     static Movimiento mov = new Movimiento();
 
+=======
+    static Movimiento mov = new Movimiento();
+>>>>>>> 4d0246884fd2daba73e10ad285c3ed77f25293a9
     static int partidaCrear = 0;
 
     public static void main(String[] args) {
@@ -50,7 +54,6 @@ public class Laboratorio4 {
                     break;
                 case "6":
                     Listar(inventario);
-
                     break;
 
                 case "3":
@@ -78,7 +81,6 @@ public class Laboratorio4 {
                     if (jugadores.size() > 1) {
                         String opcion2 = "";
                         int pos1 = 0, pos2 = 0;
-
                         listarJugadores();
                         boolean val = true;
                         while (val) {
@@ -86,7 +88,7 @@ public class Laboratorio4 {
                                 String player1 = JOptionPane.showInputDialog("Elija el Jugador:");
                                 pos1 = Integer.parseInt(player1) - 1;
                                 val = false;
-                            } catch (NumberFormatException e) {
+                            } catch (Exception e) {
                                 JOptionPane.showMessageDialog(null, "Formato incorrecto");
                                 val = true;
                             }
@@ -97,7 +99,7 @@ public class Laboratorio4 {
                                 String player2 = JOptionPane.showInputDialog("Elije el Jugador:");
                                 pos2 = Integer.parseInt(player2) - 1;
                                 val = false;
-                            } catch (NumberFormatException e) {
+                            } catch (Exception e) {
                                 JOptionPane.showMessageDialog(null, "Formato incorrecto");
                                 val = true;
                             }
@@ -322,15 +324,13 @@ public class Laboratorio4 {
 
     public static void listarpart() {
         for (int i = 0; i < partidas.size(); i++) {
-            JOptionPane.showMessageDialog(null, "Lista de partidas:\n"
-                    + i + " " + partidas.get(i).toString() + "\n");
+            System.out.println(partidas.get(i).toString());
         }
     }
 
     public static void listamov(int pos) {
         for (int i = 0; i < partidas.get(pos).movimientos.size(); i++) {
-            JOptionPane.showInputDialog("Lista de movimientos de la partida:\n"
-                    + partidas.get(pos).movimientos.get(i).toString() + "\n");
+            System.out.println(partidas.get(pos).movimientos.get(i).toString());
         }
     }
 }

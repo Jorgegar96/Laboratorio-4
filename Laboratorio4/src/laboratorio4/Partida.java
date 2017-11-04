@@ -24,6 +24,11 @@ public class Partida {
     public Partida() {
     }
 
+    @Override
+    public String toString() {
+        return "Partida{" + "movimientos=" + movimientos + ", jugador1=" + jugador1 + ", jugador2=" + jugador2 + ", turno=" + turno + ", enJuego=" + enJuego + '}';
+    }
+
     public Partida(Jugador jugador1, Jugador jugador2) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
