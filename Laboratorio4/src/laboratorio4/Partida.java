@@ -97,11 +97,13 @@ public class Partida {
                 JOptionPane.showMessageDialog(null, "Jugador 2 has ganado!"
                         + "\n" + "Salud de Jugador 2: " + enTurno.getGuerrero().getSalud()
                         + "\n" + "Salud de Jugador 1 : " + not.getGuerrero().getSalud());
+                jugador2.setPuntos(jugador2.getPuntos() + 3);
                 enJuego = false;
             } else if (jugador2.getGuerrero().getSalud() <= 0) {
                 JOptionPane.showMessageDialog(null, "Jugador 1 has ganado!"
                         + "\n" + "Salud de Jugador 1 : " + enTurno.getGuerrero().getSalud()
                         + "\n" + "Salud de Jugador 2 : " + not.getGuerrero().getSalud());
+                jugador1.setPuntos(jugador1.getPuntos() + 3);
                 enJuego = false;
             }
             agregarMov(new Movimiento());
