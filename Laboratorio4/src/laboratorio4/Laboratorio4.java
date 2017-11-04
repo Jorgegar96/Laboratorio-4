@@ -82,7 +82,7 @@ public class Laboratorio4 {
                                 String player1 = JOptionPane.showInputDialog("Elija el Jugador:");
                                 pos1 = Integer.parseInt(player1) - 1;
                                 val = false;
-                            } catch (NumberFormatException e) {
+                            } catch (Exception e) {
                                 JOptionPane.showMessageDialog(null, "Formato incorrecto");
                                 val = true;
                             }
@@ -93,7 +93,7 @@ public class Laboratorio4 {
                                 String player2 = JOptionPane.showInputDialog("Elije el Jugador:");
                                 pos2 = Integer.parseInt(player2) - 1;
                                 val = false;
-                            } catch (NumberFormatException e) {
+                            } catch (Exception e) {
                                 JOptionPane.showMessageDialog(null, "Formato incorrecto");
                                 val = true;
                             }
