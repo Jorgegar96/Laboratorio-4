@@ -87,15 +87,17 @@ public class Partida {
                     + "\n" + "Salud de Enemigo : " + not.getGuerrero().getSalud()
             );
             enTurno.getGuerrero().Ataque(not.getGuerrero());
-            if (jugador1.getGuerrero().getSalud() == 0) {
+            if (jugador1.getGuerrero().getSalud() <= 0) {
                 enJuego = false;
                 JOptionPane.showMessageDialog(null, "Jugador 2 has ganado!"
                         + "\n" + "Salud de Jugador 2: " + enTurno.getGuerrero().getSalud()
                         + "\n" + "Salud de Jugador 1 : " + not.getGuerrero().getSalud());
-            } else if (jugador2.getGuerrero().getSalud() == 0) {
+                enJuego = false;
+            } else if (jugador2.getGuerrero().getSalud() <= 0) {
                 JOptionPane.showMessageDialog(null, "Jugador 1 has ganado!"
                         + "\n" + "Salud de Jugador 1 : " + enTurno.getGuerrero().getSalud()
                         + "\n" + "Salud de Jugador 2 : " + not.getGuerrero().getSalud());
+                enJuego = false;
             }
             agregarMov(new Movimiento());
             if (turno == true) {
@@ -103,11 +105,15 @@ public class Partida {
             } else {
                 turno = true;
             }
-            int guardar = JOptionPane.showConfirmDialog(null, "Desea Guardar y Salir");
+            int guardar = 1;
+            if (enJuego == true){
+                guardar = JOptionPane.showConfirmDialog(null, "Desea Guardar y Salir");
+            }
             if (guardar == 0) {
                 enJuego = false;
             }
         }
+        
     }
 
     public void agregarMov(Movimiento mov) {
